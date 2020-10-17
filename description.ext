@@ -1,0 +1,73 @@
+class CfgFunctions {
+	#include "scripts\GOM\functions\GOM_fnc_functions.hpp"
+
+	class CINE_sandbox {
+		class laser{
+			file = "scripts\laser";
+			class drawVisibleLaserTargets{};
+			class laserTarget{};
+		};
+		class projectile{
+			file = "scripts\projectile";
+			class trackShell{};
+		};
+		class sandbox_menu {
+			file = "scripts\ace_menu";
+			class menuSetup{};
+			class menuAll{};
+			class menuPlayer{};
+			class menuVehicle{};
+			class menuTrainer{};
+			class menuEvaluatee{};
+			class menuAllPlayer{};
+		};
+	};
+};
+
+class CfgCommunicationMenu {
+	#include "scripts\GOM\functions\GOM_fnc_aircraftLoadoutMenu.hpp"
+};
+
+#include "scripts\GOM\dialogs\GOM_dialog_parents.hpp"
+#include "scripts\GOM\dialogs\GOM_dialog_controls.hpp"
+
+//-----MISSION-----
+
+author= "cineafx";
+briefingName = "[CO17]Rotary-wing Sandbox";
+onLoadName = "[CO17]Rotary-wing Sandbox";
+
+class Header {
+	gameType = Sandbox;
+	minPlayers = 1;
+	maxPlayers = 17;
+};
+
+cba_settings_hasSettingsFile = 1;
+
+enableDebugConsole[] = {"76561198098229239", "76561198043206843"};
+
+disableChannels[]={{0,true,true},{1,false,false},{2,true,true},{3,false,false},{4,true,true},{5,true,true},{6,true,true}};
+
+disabledAI = 1;
+oncheat = "hint 'You filthy cheater!'";
+
+//respawn
+respawn = 3;
+respawnButton = 1;
+respawnDelay = 5;
+respawnDialog = 0;
+respawnOnStart = 0;
+
+//corps removal
+corpseManagerMode = 1;
+corpseLimit = 1;
+corpseRemovalMinTime = 1; //seconds
+corpseRemovalMaxTime = 10; //seconds
+
+//wreck removal
+wreckManagerMode = 1;
+wreckLimit = 1;
+wreckRemovalMinTime = 1; //seconds
+wreckRemovalMaxTime = 10; //seconds
+minPlayerDistance = 5; //meters
